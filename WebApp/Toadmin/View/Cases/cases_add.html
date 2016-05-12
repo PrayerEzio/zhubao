@@ -1,0 +1,193 @@
+<include file="Public/header" />
+<div class="page">
+  <div class="fixed-bar">
+    <div class="item-title">
+      <h3>案例管理</h3>
+      <ul class="tab-base">
+        <li><a href="{:U('Cases/cases')}"><span>管理</span></a></li>
+        <li><a href="JavaScript:void(0);" class="current"><span>新增</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fixed-empty"></div> 
+  <form id="case_form" method="post" name="case_form" enctype="multipart/form-data">
+    <table class="table tb-type2 nobdb">
+      <tbody>
+        <tr class="noborder">
+          <td colspan="2" class="required"><label class="validation" for="cc_id">所属分类:</label></td>
+        </tr>
+        <tr class="noborder">
+          <td width="46" class="vatop rowform"><select name="cc_id" id="cc_id">
+              <option value="">请选择...</option>
+ 			  <volist name="class_list" id="v">	
+              <option value="{$v['cc_id']}">{$v['cc_name']}</option>
+			  </volist>
+            </select></td>
+          <td class="vatop tips"></td>
+        </tr>      
+        <tr class="noborder">
+          <td colspan="2" class="required"><label class="validation">案例名称:</label></td>
+        </tr>
+        <tr class="noborder">
+          <td class="vatop rowform"><input type="text" value="" name="case_name" id="case_name" class="txt"></td>
+          <td class="vatop tips"></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="required"><label class="validation">发布人:</label></td>
+        </tr>
+        <tr class="noborder">
+          <td class="vatop rowform"><input type="text" value="" name="case_author" id="case_author" class="txt"></td>
+          <td class="vatop tips"></td>
+        </tr>
+
+        <tr class="noborder">
+          <td colspan="2" class="required"><label class="validation">排序:</label></td>
+        </tr>
+        <tr class="noborder">
+          <td class="vatop rowform"><input type="text" value="10" name="case_sort" id="case_sort" class="txt"></td>
+          <td class="vatop tips"></td>
+        </tr>
+
+        <tr class="noborder">
+          <td colspan="2" class="required"><label for="case_pic">图片:</label></td>
+        </tr>
+        <tr class="noborder">
+         <td class="vatop rowform">  
+            <span class="type-file-show">
+          	<!--<img class="show_image" src="__IMG__/preview.png">-->
+            <div class="type-file-preview"><img src="__UPLOADS__{$rs['case_pic']}"></div>
+            </span>
+            <span class="type-file-box">
+            <input type='text' name='txt_case_pic' id='txt_case_pic' class='type-file-text' />
+            <input type='button' name='but_case_pic' id='but_case_pic' value='' class='type-file-button' />
+            <input name="case_pic" type="file" class="type-file-file" id="case_pic" size="30" hidefocus="true" nc_type="change_case_pic">
+            </span>
+          </td>
+          <td class="vatop tips"><span class="vatop rowform"></span></td>
+        </tr>      
+
+        <tr class="noborder">
+          <td colspan="2" class="required"><label>设计理念:</label></td>
+        </tr>
+        <tr class="noborder">
+          <td class="vatop rowform"><textarea id="case_idea" class="tarea" rows="3" name="case_idea"></textarea></td>
+          <td class="vatop tips"></td>
+        </tr>
+        <tr class="noborder">
+          <td colspan="2" class="required"><label class="validation">案例内容:</label></td>
+        </tr>
+        <tr class="noborder">
+          <td colspan="2" class="vatop rowform">
+          <?php kindEditor('case_content');?>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="required"><label>状态:</label></td>
+        </tr>
+        <tr class="noborder">
+          <td class="vatop rowform onoff"><label for="case_status1" class='cb-enable selected'><span>开启</span></label>
+            <label for="case_status0" class='cb-disable'><span>关闭</span></label>
+            <input id="case_status1" name="case_status" checked="checked" value="1" type="radio">
+            <input id="case_status0" name="case_status" value="0" type="radio"></td>
+          <td class="vatop tips"></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="tfoot">
+          <td colspan="20" ><a href="JavaScript:void(0);" class="btn" id="submitBtn"><span>保存</span></a></td>
+        </tr>
+      </tfoot>
+    </table>
+  </form>
+</div>
+<script>
+//按钮先执行验证再提交表单
+$(function(){$("#submitBtn").click(function(){
+    if($("#case_form").valid()){
+     $("#case_form").submit();
+	}
+	});
+});
+//
+$(document).ready(function(){
+	$('#case_form').validate({
+        errorPlacement: function(error, element){
+			error.appendTo(element.parent().parent().prev().find('td:first'));
+        },
+        success: function(label){
+            label.addClass('valid');
+        },
+        rules : {
+            cc_id : {
+                required   : true
+            },
+			case_name : {
+                required   : true
+            },
+			case_desc : {
+				required : true
+            },
+			case_store_price : {
+				required   : true,
+				number : true
+			},
+/*			case_storage:{
+				required   : true,
+				number : true				
+			},*/
+			case_sort : {
+				number : true
+			},			
+			case_body : {
+                required   : true
+            }
+        },
+        messages : {
+            cc_id : {
+                required   : '请选择分类'
+            },
+			case_name : {
+                required   : '请输入产品名称'
+            },
+			case_desc : {
+				required : '输入产品描述'
+            },
+			case_store_price : {
+				required   : '请输入产品价格',
+				number : '产品价格输入错误'
+            },	
+/*			case_storage : {
+				required   : '请输入产品库存',
+				number : '产品库存输入错误'				
+			},*/
+			case_sort : {
+				number : '排序格式输入错误'
+            },					
+			case_body : {
+                required   : '请输入产品信息'
+            }
+        }
+    });
+	
+});
+</script>
+<script type="text/javascript">
+// 模拟网站LOGO上传input type='file'样式
+$(function(){
+	$("#case_pic").change(function(){
+		$("#txt_case_pic").val($(this).val());
+	});
+// 上传图片类型
+$('input[class="type-file-file"]').change(function(){
+	var filepatd=$(this).val();	
+	var extStart=filepatd.lastIndexOf(".");
+	var ext=filepatd.substring(extStart,filepatd.lengtd).toUpperCase();		
+		if(ext!=".PNG"&&ext!=".GIF"&&ext!=".JPG"&&ext!=".JPEG"){
+			alert("图片格式错误");
+				$(this).attr('value','');
+			return false;
+		}
+	});
+});
+</script>
+<include file="Public/footer" />

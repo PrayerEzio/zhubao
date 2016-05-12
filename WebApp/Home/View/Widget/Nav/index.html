@@ -1,0 +1,42 @@
+<div class="nav">
+    <div class="container">
+        <ul>
+            <li <if condition="CONTROLLER_NAME eq Index">class="fl on rlt"<else/>class="fl rlt"</if>><a href="{:U('Index/index')}">首页</a></li>
+            <li <if condition="ACTION_NAME eq brand">class="fl on rlt"<else/>class="fl rlt"</if>><a href="{:U('About/brand')}">品牌</a></li>
+            <volist name="nav['product']" id="vo">
+            <li <if condition="CONTROLLER_NAME eq Product && $pcate eq $vo['gc_id']">class="fl on rlt"<else/>class="fl rlt"</if>>
+            	<a href="{:U('Product/index',array('cate'=>$vo['gc_id']))}">{$vo['gc_name']}</a>
+                <ul class="abs hide">
+                	<volist name="vo['child']" id="v">
+                    <li><a href="{:U('Product/index',array('cate'=>$v['gc_id']))}">{$v['gc_name']}</a></li>
+                    </volist>
+                </ul>
+            </li>
+            </volist>
+            <li <if condition="CONTROLLER_NAME eq News">class="fl on rlt"<else/>class="fl rlt"</if>><a href="{:U('News/index')}">新闻</a></li>
+            <li <if condition="CONTROLLER_NAME eq Join">class="fl on rlt"<else/>class="fl rlt"</if>><a href="{:U('Join/index')}">招商加盟</a></li>
+            <li <if condition="CONTROLLER_NAME eq City">class="fl on rlt"<else/>class="fl rlt"</if>><a href="{:U('City/index')}">实体网点</a></li>
+            <li <if condition="CONTROLLER_NAME eq Article">class="fl on rlt"<else/>class="fl rlt"</if>>
+            <volist name="nav['article']" id="vo" offset="0" length="1">
+            <a href="{:U('Article/index',array('id'=>$vo['doc_id']))}">{$vo['doc_title']}</a>
+            </volist>
+            <ul  class="abs hide">
+            	<volist name="nav['article']" id="vo" offset="1">
+                <li><a href="{:U('Article/index',array('id'=>$vo['doc_id']))}">{$vo['doc_title']}</a></li>
+                </volist>
+            </ul>
+            </li>
+            <li <if condition="CONTROLLER_NAME eq Knowledge">class="fl on rlt"<else/>class="fl rlt"</if>>
+            <volist name="nav['knowledge']" id="vo" offset="0" length="1">
+            <a href="{:U('Knowledge/index',array('id'=>$vo['doc_id']))}">{$vo['doc_title']}</a>
+            </volist>
+            <ul  class="abs hide">
+            	<volist name="nav['knowledge']" id="vo" offset="1">
+                <li><a href="{:U('Knowledge/index',array('id'=>$vo['doc_id']))}">{$vo['doc_title']}</a></li>
+                </volist>
+            </ul>
+            </li>
+            <li class="fl rlt"><a href="{:U('Contact/index')}">联系我们</a></li>
+        </ul>
+    </div>
+</div>
