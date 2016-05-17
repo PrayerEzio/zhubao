@@ -1,10 +1,13 @@
 <include file="Public:header"/>
+<notemtpy name="banner">
 <div class="banner">
     <ul>
-        <li style="background-image: url(__IMG__/p1.png)"></li>
-        <li style="background-image: url(__IMG__/p2.png);"></li>
+        <volist name="banner" id="vo">
+        <li style="background-image: url(__UPLOADS__/{$vo['ap_pic']})"></li>
+        </volist>
     </ul>
 </div>
+</notemtpy>
 <div class="center">
     <div class="main">
         <div class="line">
@@ -217,7 +220,7 @@
         <div class="ccenter-word">
             <p>行业资讯 /<span>Industry Information</span></p>
             <div class="more">
-                <a href="行业资讯.html">more ></a>
+                <a href="{:U('News/index')}">more ></a>
             </div>
         </div>
         <div class="line4"></div>
@@ -271,15 +274,10 @@
                             <p>A very shot exerpt goes here... </p>
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
             <img class="scrollButtons right" src="__IMG__/rightarrow.png">
-
         </div>
-
     </div>
 </div>
 <include file="Public:footer"/>

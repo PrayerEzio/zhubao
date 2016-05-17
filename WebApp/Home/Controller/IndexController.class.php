@@ -8,6 +8,8 @@ class IndexController extends BaseController {
 	}  
     public function index()
 	{
+        $order = 'ap_sort desc';
+        $this->banner = M('AdvPosition')->where(array('ap_code'=>'banner'))->order($order)->select();
         $this->display();
     }
 }

@@ -5,13 +5,13 @@
         <div class="nr_show">
             <div class="nr_word">
                 <dl>
-                    <dd><p>标题</p></dd>
-                    <dt><span>作者 : 陈橙橙</span><span>发布时间 : 2016.5.2</span></dt>
+                    <dd><p>{$info['article_title']}</p></dd>
+                    <dt><span>作者 : {$info['article_author']}</span><span>发布时间 : {$info['article_time']|date='Y-m-d H:i:s',###}</span></dt>
                 </dl>
             </div>
             <div class="nr_line"></div>
             <div class="nr_word2">
-                <p>内容</p>
+                <p>{$info['article_content']}</p>
             </div>
         </div>
         <div class="nr_word3">

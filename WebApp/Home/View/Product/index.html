@@ -6,136 +6,75 @@
             <span class="cp_word">系列:      </span>
             <ul>
                 <li>|</li>
-                <li class="ture"><a href="">全部</a></li>
-                <li><a href="">手环系列</a></li>
-                <li><a href="">戒指系列</a></li>
-                <li><a href="">项链系列</a></li>
-                <li><a href="">手链系列</a></li>
+                <li <empty name="search['gc_id']">class="ture"</empty>><a href="{:U('',array('tag'=>$search['tag'],'price'=>$search['price']))}">全部</a></li>
+                <volist name="goods_class_list" id="vo">
+                    <li <eq name="search['gc_id']" value="$vo['gc_id']">class="ture"</eq>><a href="{:U('',array('gc_id'=>$vo['gc_id'],'tag'=>$search['tag'],'price'=>$search['price']))}">{$vo['gc_name']}</a></li>
+                </volist>
             </ul>
         </div>
         <div class="cp_choice">
             <span class="cp_word">风格:      </span>
             <ul>
                 <li>|</li>
-                <li class="ture"><a href="">全部</a></li>
-                <li><a href="">黄金</a></li>
-                <li><a href="">钻石</a></li>
-                <li><a href="">银饰</a></li>
-                <li><a href="">珀金</a></li>
+                <li <empty name="search['tag']">class="ture"</empty>><a href="{:U('',array('gc_id'=>$search['gc_id'],'price'=>$search['price']))}">全部</a></li>
+                <volist name="goods_tag_list" id="vo">
+                <li <eq name="search['tag']" value="$vo['tag_id']">class="ture"</eq>><a href="{:U('',array('gc_id'=>$search['gc_id'],'tag'=>$vo['tag_id'],'price'=>$search['price']))}">{$vo['tag_name']}</a></li>
+                </volist>
             </ul>
         </div>
         <div class="cp_choice">
             <span class="cp_word">价格:      </span>
             <ul>
                 <li>|</li>
-                <li class="ture"><a href="">全部</a></li>
-                <li><a href="">100以下</a></li>
-                <li><a href="">100-200</a></li>
-                <li><a href="">200-500</a></li>
-                <li><a href="">500以上</a></li>
+                <li <empty name="search['price']">class="ture"</empty>><a href="{:U('',array('gc_id'=>$search['gc_id'],'tag'=>$search['tag_id']))}">全部</a></li>
+                <li <eq name="search['price']" value="0-100">class="ture"</eq>><a href="{:U('',array('gc_id'=>$search['gc_id'],'tag'=>$search['tag_id'],'price'=>'0-100'))}">100以下</a></li>
+                <li <eq name="search['price']" value="100-200">class="ture"</eq>><a href="{:U('',array('gc_id'=>$search['gc_id'],'tag'=>$search['tag_id'],'price'=>'100-200'))}">100-200</a></li>
+                <li <eq name="search['price']" value="200-500">class="ture"</eq>><a href="{:U('',array('gc_id'=>$search['gc_id'],'tag'=>$search['tag_id'],'price'=>'200-500'))}">200-500</a></li>
+                <li <eq name="search['price']" value="500-max">class="ture"</eq>><a href="{:U('',array('gc_id'=>$search['gc_id'],'tag'=>$search['tag_id'],'price'=>'500-max'))}">500以上</a></li>
             </ul>
         </div>
     </div>
-
+    <volist name="list" id="vo" offset="1" length='3'>
     <div class="Amain">
         <div class="show">
             <ul>
-                <li><img src="__IMG__/p1.jpg" width="300" height="300"></li>
-                <li><p class="sall">20000.00</p></li>
-                <li><p class="show_p">戒指</p></li>
-                <li class="link"><a href="{:U('Product/detail')}"><button type="button"class="s-b1">产品详情</button></a></li>
+                <li><img src="__UPLOAS__/{$vo['goods_pic']}" width="300" height="300"></li>
+                <li><p class="sall">{$vo['goods_price']|price_format}</p></li>
+                <li><p class="show_p">{$vo['goods_name']}</p></li>
+                <li class="link"><a href="{:U('Product/detail',array('id'=>$vo['goods_id']))}"><button type="button"class="s-b1">产品详情</button></a></li>
             </ul>
         </div>
     </div>
-    <div class="Amain">
-        <div class="show">
-            <ul>
-                <li><img src="__IMG__/p1.jpg" width="300" height="300"></li>
-                <li><p class="sall">20000.00</p></li>
-                <li><p class="show_p">戒指</p></li>
-                <li class="link"><a href="{:U('Product/detail')}"><button type="button"class="s-b1">产品详情</button></a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="Amain">
-        <div class="show">
-            <ul>
-                <li><img src="__IMG__/p1.jpg" width="300" height="300"></li>
-                <li><p class="sall">20000.00</p></li>
-                <li><p class="show_p">戒指</p></li>
-                <li class="link"><a href="{:U('Product/detail')}"><button type="button"class="s-b1">产品详情</button></a></li>
-            </ul>
-        </div>
-    </div>
+    </volist>
     <div class="clear"></div>
-    <div class="Amain">
-        <div class="show">
-            <ul>
-                <li><img src="__IMG__/p1.jpg" width="300" height="300"></li>
-                <li><p class="sall">20000.00</p></li>
-                <li><p class="show_p">戒指</p></li>
-                <li class="link"><a href="{:U('Product/detail')}"><button type="button"class="s-b1">产品详情</button></a></li>
-            </ul>
+    <volist name="list" id="vo" offset="3" length='3'>
+        <div class="Amain">
+            <div class="show">
+                <ul>
+                    <li><img src="__UPLOAS__/{$vo['goods_pic']}" width="300" height="300"></li>
+                    <li><p class="sall">{$vo['goods_price']|price_format}</p></li>
+                    <li><p class="show_p">{$vo['goods_name']}</p></li>
+                    <li class="link"><a href="{:U('Product/detail',array('id'=>$vo['goods_id']))}"><button type="button"class="s-b1">产品详情</button></a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="Amain">
-        <div class="show">
-            <ul>
-                <li><img src="__IMG__/p1.jpg" width="300" height="300"></li>
-                <li><p class="sall">20000.00</p></li>
-                <li><p class="show_p">戒指</p></li>
-                <li class="link"><a href="{:U('Product/detail')}"><button type="button"class="s-b1">产品详情</button></a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="Amain">
-        <div class="show">
-            <ul>
-                <li><img src="__IMG__/p1.jpg" width="300" height="300"></li>
-                <li><p class="sall">20000.00</p></li>
-                <li><p class="show_p">戒指</p></li>
-                <li class="link"><a href="{:U('Product/detail')}"><button type="button"class="s-b1">产品详情</button></a></li>
-            </ul>
-        </div>
-    </div>
+    </volist>
     <div class="clear"></div>
-    <div class="Amain">
-        <div class="show">
-            <ul>
-                <li><img src="__IMG__/p1.jpg" width="300" height="300"></li>
-                <li><p class="sall">20000.00</p></li>
-                <li><p class="show_p">戒指</p></li>
-                <li class="link"><a href="{:U('Product/detail')}"><button type="button"class="s-b1">产品详情</button></a></li>
-            </ul>
+    <volist name="list" id="vo" offset="6" length='3'>
+        <div class="Amain">
+            <div class="show">
+                <ul>
+                    <li><img src="__UPLOAS__/{$vo['goods_pic']}" width="300" height="300"></li>
+                    <li><p class="sall">{$vo['goods_price']|price_format}</p></li>
+                    <li><p class="show_p">{$vo['goods_name']}</p></li>
+                    <li class="link"><a href="{:U('Product/detail',array('id'=>$vo['goods_id']))}"><button type="button"class="s-b1">产品详情</button></a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="Amain">
-        <div class="show">
-            <ul>
-                <li><img src="__IMG__/p1.jpg" width="300" height="300"></li>
-                <li><p class="sall">20000.00</p></li>
-                <li><p class="show_p">戒指</p></li>
-                <li class="link"><a href="{:U('Product/detail')}"><button type="button"class="s-b1">产品详情</button></a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="Amain">
-        <div class="show">
-            <ul>
-                <li><img src="__IMG__/p1.jpg" width="300" height="300"></li>
-                <li><p class="sall">20000.00</p></li>
-                <li><p class="show_p">戒指</p></li>
-                <li class="link"><a href="{:U('Product/detail')}"><button type="button"class="s-b1">产品详情</button></a></li>
-            </ul>
-        </div>
-    </div>
+    </volist>
     <div class="clear"></div>
     <div class="page">
-        <ul>
-            <li class="page1"><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">>></a></li>
-        </ul>
+        {$page}
     </div>
 </div>
 <include file="Public:footer"/>
