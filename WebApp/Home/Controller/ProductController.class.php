@@ -8,10 +8,6 @@ class ProductController extends BaseController {
 	}  
     public function index()
 	{
-        $this->display();
-    }
-	public function detail()
-	{
 		$this->display();
-	}
+    }
 }

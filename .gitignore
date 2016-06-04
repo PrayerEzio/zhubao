@@ -1,6 +1,4 @@
+/WebApp/Common/Conf/config.php
 /WebApp/Runtime
 *.log
-/Uploads
-/Backup
-/WebApp/Common/Conf/config.php
 .idea

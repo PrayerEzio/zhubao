@@ -15,14 +15,14 @@ $(document).ready(function(){
 				success: function(data){
 					var src='';
 					for(var i = 0; i < data.length; i++){
-						var tmp_vertline = "<img class='preimg' src='"+SiteUrl+"/Public/Toadmin/images/vertline.gif'/>";
+						var tmp_vertline = "<img class='preimg' src='"+SiteUrl+"/Public/admin/images/vertline.gif'/>";
 						src += "<tr class='"+pr.attr('class')+" row"+id+"'>";
 						src += "<td class='w36'><input type='checkbox' name='check_gc_id[]' value='"+data[i].gc_id+"' class='checkitem'>";
 						//图片
 						if(data[i].have_child == 1){
-							src += " <img fieldid='"+data[i].gc_id+"' status='open' nc_type='flex' src='"+SiteUrl+"/Public/Toadmin/images/tv-expandable.gif' />";
+							src += " <img fieldid='"+data[i].gc_id+"' status='open' nc_type='flex' src='"+SiteUrl+"/Public/admin/images/tv-expandable.gif' />";
 						}else{
-							src += " <img fieldid='"+data[i].gc_id+"' status='none' nc_type='flex' src='"+SiteUrl+"/Public/Toadmin/images/tv-item.gif' />";
+							src += " <img fieldid='"+data[i].gc_id+"' status='none' nc_type='flex' src='"+SiteUrl+"/Public/admin/images/tv-item.gif' />";
 						}
 						src += "</td><td class='w48 sort'>";						
 						//排序
@@ -35,9 +35,9 @@ $(document).ready(function(){
 							src += tmp_vertline;
 						}
 						if(data[i].have_child == 1){
-							src += " <img fieldid='"+data[i].gc_id+"' status='open' nc_type='flex' src='"+SiteUrl+"/Public/Toadmin/images/tv-item1.gif' />";
+							src += " <img fieldid='"+data[i].gc_id+"' status='open' nc_type='flex' src='"+SiteUrl+"/Public/admin/images/tv-item1.gif' />";
 						}else{
-							src += " <img fieldid='"+data[i].gc_id+"' status='none' nc_type='flex' src='"+SiteUrl+"/Public/Toadmin/images/tv-expandable1.gif' />";
+							src += " <img fieldid='"+data[i].gc_id+"' status='none' nc_type='flex' src='"+SiteUrl+"/Public/admin/images/tv-expandable1.gif' />";
 						}
 						src += " <span title='可编辑下级分类名称' required='1' fieldid='"+data[i].gc_id+"' ajax_branch='gc_name' t' ajax_control='Goods' ajax_control='Goods' fieldname='gc_name' nc_type='inline_edit' class='editable tooltip'>"+data[i].gc_name+"</span>";
 						//新增下级
@@ -66,10 +66,10 @@ $(document).ready(function(){
 					$('img[nc_type="flex"]').unbind('click');
 					$('span[nc_type="inline_edit"]').unbind('click');
 					//重现初始化页面
-                    $.getScript(SiteUrl+"/Public/Toadmin/js/jquery.edit.js");
-					$.getScript(SiteUrl+"/Public/Toadmin/js/jquery.goods_class.js");
-					$.getScript(SiteUrl+"/Public/Toadmin/js/jquery.tooltip.js");
-					$.getScript(SiteUrl+"/Public/Toadmin/js/admincp.js");
+                    $.getScript(SiteUrl+"/Public/admin/js/jquery.edit.js");
+					$.getScript(SiteUrl+"/Public/admin/js/jquery.goods_class.js");
+					$.getScript(SiteUrl+"/Public/admin/js/jquery.tooltip.js");
+					$.getScript(SiteUrl+"/Public/admin/js/admincp.js");
 				},
 				error: function(){
 					alert('获取信息失败');

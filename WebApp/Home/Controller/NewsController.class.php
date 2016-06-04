@@ -8,10 +8,12 @@ class NewsController extends BaseController {
 	}  
     public function index()
 	{
-        $this->display();
-    }
-	public function detail()
-	{
 		$this->display();
-	}
+    }
+    
+    public function map()
+    {
+    	$this->display();
+    }
+
 }

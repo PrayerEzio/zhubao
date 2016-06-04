@@ -8,6 +8,7 @@ class IndexController extends BaseController {
 	}  
     public function index()
 	{
-        $this->display();
+		$this->assign('title','臻爱珠宝');
+		$this->display();
     }
 }

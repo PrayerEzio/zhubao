@@ -8,6 +8,11 @@
  * @author	   muxiangdao-cn Team
  */
 
+/**
+ * 打印输出
+ * @param $arr
+ * @param string $Charset
+ */
 function p($arr,$Charset = 'utf-8'){
 	if (!empty($Charset)) {
 		header("Content-Type: text/html; charset=$Charset");

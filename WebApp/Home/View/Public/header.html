@@ -1,53 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="__CSS__/zhubao.css">
-    <link rel="stylesheet" href="__CSS__/animate.css">
-    <link rel="stylesheet" href="__CSS__/style.css">
-    <link rel="stylesheet" href="__CSS__/bootstrap.min.css">
-    <link rel="stylesheet" href="__CSS__/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="__CSS__/zzsc.css">
-    <script type="text/javascript" class="library" src="__JS__/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" class="library" src="__JS__/jquery.colorbox-min.js"></script>
-    <script type="text/javascript" class="library" src="__JS__/zzsc.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 新 Bootstrap 核心 CSS 文件 -->
-    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/__CSS__/bootstrap.min.css" rel="stylesheet">
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <title>珠宝</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="__CSS__/zhubao.css">
+	<link rel="stylesheet" href="__CSS__/animate.css">
+	<link rel="stylesheet" href="__CSS__/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/__JS__/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="__CSS__/zzsc.css">
+	<script type="text/javascript" class="library" src="__JS__/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" class="library" src="__JS__/jquery.colorbox-min.js"></script>
+	<script type="text/javascript" class="library" src="__JS__/zzsc.js"></script>
+	<title>{$title}</title>
 </head>
 <body>
 <div class="top">
-    <div class="main">
-        <div class="topword">
-            <p class="topw1">欢迎来到,臻爱珠宝定制官网!</p>
-            <div class="topword2">
-                <ul>
-                    <li class="topw2" >微信二维码  |</li>
-                    <div class="wx" style="display:none;">
-                        <img src="__IMG__/weixin.jpg" width="150px" height="150px">
-                    </div>
+	<div class="main">
+		<div class="topword">
+			<p class="topw1">欢迎来到,臻爱珠宝定制官网!</p>
+			<div class="topword2">
+				<ul>
+					<li class="topw2" >微信二维码  |</li>
+					<div class="wx" style="display:none;">
+						<img src="__IMG__/weixin.jpg" width="150px" height="150px">
+					</div>
 
-                    <li class="topw2"><p>帮助中心</p></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="choice">
-        <div class="main">
-            <div class="choice1">
-                <ul>
-                    <li <if condition="CONTROLLER_NAME eq 'Index'"> class="fristpage" </if>><a href="{:U('Index/index')}">首页</a></li>
-                    <li <if condition="CONTROLLER_NAME eq 'Product'"> class="fristpage" </if>><a href="{:U('Product/index')}">产品展示</a></li>
-                    <li <if condition="CONTROLLER_NAME eq 'News'"> class="fristpage" </if>><a href="{:U('News/index')}">行业快讯</a></li>
-                    <li <if condition="CONTROLLER_NAME eq 'About'"> class="fristpage" </if>><a href="{:U('About/index')}">关于我们</a></li>
-                    <li <if condition="CONTROLLER_NAME eq 'Contact'"> class="fristpage" </if>><a href="{:U('Contact/index')}">联系我们</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+					<li class="topw2"><p>帮助中心</p></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="choice">
+		<div class="main">
+			<div class="choice1">
+				<ul>
+					<li><a href="珠宝首页.html">首页</a></li>
+					<li><a href="产品展示1.html">产品展示</a></li>
+					<li><a href="行业资讯.html">行业快讯</a></li>
+					<li class="fristpage"><a href="our.html">关于我们</a></li>
+					<li><a href="联系我们.html">联系我们</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
 </div>

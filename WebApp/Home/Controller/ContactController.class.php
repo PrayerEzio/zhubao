@@ -7,7 +7,7 @@ class ContactController extends BaseController {
 		$this->seo_set();
 	}  
     public function index()
-	{
-        $this->display();
+    {
+	    $this->display();
     }
 }

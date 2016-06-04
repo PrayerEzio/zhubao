@@ -42,6 +42,7 @@ class BaseController extends Controller{
 			$link = M('Link')->where(array('status'=>1))->order('sort desc')->select();
 			$this->assign('seo',seo());
 			$this->assign('link',$link);
+			$this->assign('title','臻爱珠宝');
 		}
 	}
 	public function seo_set($title='',$key='',$desc='')

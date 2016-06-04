@@ -15,14 +15,14 @@
 						info+='<tr class="hover edit">';
 						info+='<td class="w48 sort"><span title="可编辑" ajax_branch="d_sort" ajax_control="Setting" datatype="number" fieldid="'+data[i].id+'"fieldname="d_sort" nc_type="inline_edit" class="editable tooltip">'+data[i].d_sort+'</span></td>';
 						info+='<td class="w50pre name"><span title="可编辑" required="1" fieldid="'+data[i].id+'" ajax_branch="name" ajax_control="Setting" fieldname="name" nc_type="inline_edit" class="editable tooltip">'+data[i].name+'</span></td>';		
-						info+='<td class="power-onoff"><a href="JavaScript:void(0);" class="tooltip disabled" fieldvalue="0" fieldid="'+data[i].id+'" ajax_control="Setting" ajax_branch="usetype" fieldname="usetype" nc_type="inline_edit" title="设置为常用城市"><img src="'+SiteUrl+'/Public/Toadmin/images/transparent.gif"></a></td></tr>';
+						info+='<td class="power-onoff"><a href="JavaScript:void(0);" class="tooltip disabled" fieldvalue="0" fieldid="'+data[i].id+'" ajax_control="Setting" ajax_branch="usetype" fieldname="usetype" nc_type="inline_edit" title="设置为常用城市"><img src="'+SiteUrl+'/Public/admin/images/transparent.gif"></a></td></tr>';
 						
 					}
 					pr.html(info);
-					$.getScript(SiteUrl+"/Public/Toadmin/js/jquery.edit.js");
-					$.getScript(SiteUrl+"/Public/Toadmin/js/arealist.js");
-					$.getScript(SiteUrl+"/Public/Toadmin/js/jquery.tooltip.js");
-					$.getScript(SiteUrl+"/Public/Toadmin/js/admincp.js");
+					$.getScript(SiteUrl+"/Public/admin/js/jquery.edit.js");
+					$.getScript(SiteUrl+"/Public/admin/js/arealist.js");
+					$.getScript(SiteUrl+"/Public/admin/js/jquery.tooltip.js");
+					$.getScript(SiteUrl+"/Public/admin/js/admincp.js");				  
 				},
 				error: function(){
 					alert('获取信息失败');
@@ -48,13 +48,13 @@
 					info+='<tr class="hover edit">';
 					info+='<td class="w48 sort"><span title="可编辑" ajax_branch="d_sort" ajax_control="Setting" datatype="number" fieldid="'+data[i].id+'"fieldname="d_sort" nc_type="inline_edit" class="editable tooltip">'+data[i].d_sort+'</span></td>';
 					info+='<td class="w50pre name"><span title="可编辑" required="1" fieldid="'+data[i].id+'" ajax_branch="name" ajax_control="Setting" fieldname="name" nc_type="inline_edit" class="editable tooltip">'+data[i].name+'</span></td>';		
-					info+='<td class="power-onoff"><a href="JavaScript:void(0);" class="tooltip disabled" fieldvalue="0" fieldid="'+data[i].id+'" ajax_control="Setting" ajax_branch="usetype" fieldname="usetype" nc_type="inline_edit" title="设置为常用城市"><img src="'+SiteUrl+'/Public/Toadmin/images/transparent.gif"></a></td></tr>';
+					info+='<td class="power-onoff"><a href="JavaScript:void(0);" class="tooltip disabled" fieldvalue="0" fieldid="'+data[i].id+'" ajax_control="Setting" ajax_branch="usetype" fieldname="usetype" nc_type="inline_edit" title="设置为常用城市"><img src="'+SiteUrl+'/Public/admin/images/transparent.gif"></a></td></tr>';
 				}
 				pr.html(info);
-				$.getScript(SiteUrl+"/Public/Toadmin/js/jquery.edit.js");
-				$.getScript(SiteUrl+"/Public/Toadmin/js/arealist.js");
-				$.getScript(SiteUrl+"/Public/Toadmin/js/jquery.tooltip.js");
-				$.getScript(SiteUrl+"/Public/Toadmin/js/admincp.js");
+				$.getScript(SiteUrl+"/Public/admin/js/jquery.edit.js");
+				$.getScript(SiteUrl+"/Public/admin/js/arealist.js");
+				$.getScript(SiteUrl+"/Public/admin/js/jquery.tooltip.js");
+				$.getScript(SiteUrl+"/Public/admin/js/admincp.js");				  
 			},
 			error: function(){
 				alert('获取信息失败');
@@ -76,13 +76,13 @@
 					info+='<tr class="hover edit">';
 					info+='<td class="w48 sort"><span title="可编辑" ajax_branch="d_sort" ajax_control="Setting" datatype="number" fieldid="'+data[i].id+'"fieldname="d_sort" nc_type="inline_edit" class="editable tooltip">'+data[i].d_sort+'</span></td>';
 					info+='<td class="w50pre name"><span title="可编辑" required="1" fieldid="'+data[i].id+'" ajax_branch="name" ajax_control="Setting" fieldname="name" nc_type="inline_edit" class="editable tooltip">'+data[i].name+'</span></td>';		
-					info+='<td class="power-onoff"><a href="JavaScript:void(0);" class="tooltip disabled" fieldvalue="0" fieldid="'+data[i].id+'" ajax_control="Setting" ajax_branch="usetype" fieldname="usetype" nc_type="inline_edit" title="设置为常用城市"><img src="'+SiteUrl+'/Public/Toadmin/images/transparent.gif"></a></td></tr>';
+					info+='<td class="power-onoff"><a href="JavaScript:void(0);" class="tooltip disabled" fieldvalue="0" fieldid="'+data[i].id+'" ajax_control="Setting" ajax_branch="usetype" fieldname="usetype" nc_type="inline_edit" title="设置为常用城市"><img src="'+SiteUrl+'/Public/admin/images/transparent.gif"></a></td></tr>';
 				}
 				pr.html(info);
-				$.getScript(SiteUrl+"/Public/Toadmin/js/jquery.edit.js");
-				$.getScript(SiteUrl+"/Public/Toadmin/js/jquery.district.js");
-				$.getScript(SiteUrl+"/Public/Toadmin/js/jquery.tooltip.js");
-				$.getScript(SiteUrl+"/Public/Toadmin/js/admincp.js");
+				$.getScript(SiteUrl+"/Public/admin/js/jquery.edit.js");
+				$.getScript(SiteUrl+"/Public/admin/js/jquery.district.js");
+				$.getScript(SiteUrl+"/Public/admin/js/jquery.tooltip.js");
+				$.getScript(SiteUrl+"/Public/admin/js/admincp.js");				  
 			},
 			error: function(){
 				alert('获取信息失败');

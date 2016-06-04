@@ -8,6 +8,12 @@ class AboutController extends BaseController {
 	}  
     public function index()
 	{
-        $this->display();
+		$this->display();
     }
+    
+    public function map()
+    {
+    	$this->display();
+    }
+
 }
